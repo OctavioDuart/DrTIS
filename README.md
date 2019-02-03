@@ -20,18 +20,21 @@ Antes de inciar o servidor é necessário iniciar o banco, pois senão o servido
 
 No Windows
 
-C:\mongodb\bin\mongod.exe  - Inicia o Servidor MongoDB &&
+C:\mongodb\bin\mongod.exe  - Inicia o Servidor MongoDB 
+
 C:\mongodb\bin\mongo.exe   - Inicia  o Cliente  MongoDB
 
 No Linux 
 
-sudo service mongod start - Inicia o Servidor MongoDB &&
+sudo service mongod start - Inicia o Servidor MongoDB 
+
 mongo                     - Inicia o Cliente  MongoDB      
 
 
 No Mac 
 
 mongod   - Inicia o Servidor MongoDB &&
+
 mongo    - Inicia o Cliente  MongoDB  
 _____________________________________________________________________________________________________________________________
 
@@ -40,7 +43,9 @@ ________________________________________________________________________________
 Com o MongoDB inciado , podemos iniciar o servidor e pra isso basta digitar :  node start.js 
 Se o ambiente tiver sido bem configurado  a saida no terminal será : 
 
+
 Server running -  PORT :  3000
+
 Connected with database
 
 _____________________________________________________________________________________________________________________________
@@ -53,13 +58,17 @@ Com o ambiente configurado podemos inciar os testes nas requisições.
 
 Método: POST      Rota: http://localhost:3000/products/register
 
-Exemplo JSON : {
+Exemplo JSON :
+
+	      {
                   "name": "Celular", - String
                   "price": 800.99,   - Number or Float
                   "quantity": 20     - Number (inteiro) 
                }
 
+
 Retorno em caso de sucesso : { "mensagem": "Produto salvo com sucesso . " } . 
+
 
 Obs: Ao testar o método você deve obedecer a algumas regras de validação :
 
@@ -97,13 +106,16 @@ Método: PUT  Rota:http://localhost:3000/products/update
 
 Retorno em caso de sucesso: {"mensagem": "Os dados do produto foram alterados com sucesso . "}
 
-Exemplo de JSON :      {
-                          "_id": "5c5691977e94450799793de8",
-                          "name": "Celular da Maça",
-                          "price": 800.99,
-                          "quantity": 20,
-                          "__v": 0
-                       }
+Exemplo de JSON :
+
+			{
+			  "_id": "5c5691977e94450799793de8",
+			  "name": "Celular da Maça",
+			  "price": 800.99,
+			  "quantity": 20,
+			  "__v": 0
+		       }
+		       
 
 Obs: Altere os dados respeitando as tipagens dos mesmos e não altere o ID é ele que é usado como referência para procutar o documento que você deseja alterar . 
 
@@ -113,9 +125,11 @@ Obs: Altere os dados respeitando as tipagens dos mesmos e não altere o ID é el
                                                  
 Método: POST      Rota: http://localhost:3000/sales/register
 
-Exemplo JSON :{
-	        "cpf_client" : "12345678910", - String
-	        "products" : [
+Exemplo JSON :
+	
+		{
+		 "cpf_client" : "12345678910", - String
+		 "products" : [
 		                {"quantity" : 5 , "name": "Celular"},
 		                {"quantity" : 10 ,"name": "Fones"},
 		                {"quantity" : 15 , "name":"Notebook"}
@@ -160,7 +174,9 @@ Obs: Caso a requisição seja solicitada com um id não cadastrado a API retorna
  
  Retorno em caso de sucesso: {"mensagem": "Os dados do produto foram alterados com sucesso . "}
 
-Exemplo de JSON :        {
+Exemplo de JSON :       
+
+			{
                            "_id": "5c5696d13ac3980e7805f198",
                            "cpf_client": "123456789",
                            "products": [
