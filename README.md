@@ -20,18 +20,18 @@ Antes de inciar o servidor é necessário iniciar o banco, pois senão o servido
 
 No Windows
 
-C:\mongodb\bin\mongod.exe  - Iniciar o Servidor MongoDB
+C:\mongodb\bin\mongod.exe  - Iniciar o Servidor MongoDB &&
 C:\mongodb\bin\mongo.exe   - Inicia  o Cliente  MongoDB
 
 No Linux 
 
-sudo service mongod start - Iniciar o Servidor MongoDB
+sudo service mongod start - Iniciar o Servidor MongoDB &&
 mongo                     - Iniciar o Cliente  MongoDB      
 
 
 No Mac 
 
-mongod   - Iniciar o Servidor MongoDB
+mongod   - Iniciar o Servidor MongoDB &&
 mongo    - Iniciar o Cliente  MongoDB  
 _____________________________________________________________________________________________________________________________
 
