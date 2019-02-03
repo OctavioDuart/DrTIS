@@ -119,9 +119,9 @@ router.delete('/delete/:id', (req, res) => {
 
     function promiseReturn(result) {
         if (!result)
-            return res.status(500).send({ mensagem: "Produto não encontrado" });
+            return res.status(500).send({ mensagem: "Venda não encontrada" });
 
-        return res.status(200).send({ mensagem: "O produto foi deletado com sucesso" });
+        return res.status(200).send({ mensagem: "A venda foi deletada com sucesso" });
     }
 
     function promiseError(ex) {
@@ -149,9 +149,9 @@ router.put('/update', (req, res) => {
 
     function promiseReturn(result) {
         if (!result)
-            return res.status(500).send({ mensagem: "Produto não encontrado" });
+            return res.status(500).send({ mensagem: "Venda  não encontrada" });
 
-        return res.status(200).send({ mensagem: "Produto alterado com sucesso" });
+        return res.status(200).send({ mensagem: "Venda alterada com sucesso" });
     }
 
     function promiseError(ex) {

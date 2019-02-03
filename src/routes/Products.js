@@ -12,17 +12,18 @@ router.post('/register', (req, res) => {
 
     // Validação dos dados                  
     function promiseValidData() {
+        var error = false;
         if (product.name === undefined || product.name === "" || product.name === null)
-            return res.status(500).send({ mensagem: 'Informe o nome do produto' });
+            error = true;         
 
         if (product.price === 0)
-            return res.status(500).send({ mensagem: 'O preço do produto não pode ser 0 ' });
-
-        return true;
+            error = true;
+            
+        return error;
     };
 
     function promiseRegister(result) {
-        if (result) {
+        if (!result) {
             const modelProducts = new productsModel(product);
             return modelProducts.save();
         };
@@ -32,7 +33,7 @@ router.post('/register', (req, res) => {
 
     function promiseReturn(result) {
         if (!result)
-            return res.status(500).send({ mensagem: "Ocorreu algum erro ao criar o produto . " });
+            return res.status(500).send({ mensagem: "Você deve informar todos os dados para inserir um novo produto . " });
 
         return res.status(200).send({ mensagem: "Produto salvo com sucesso . " });
     }
@@ -53,7 +54,7 @@ router.get('/consult/all', (req, res) => {
     };
 
     function promiseReturn(result) {
-        if (!result)
+        if (result.length === 0)
             return res.status(200).send({ mensagem: "Não existem produtos na base de dados" });
 
         return res.status(200).send(result);
