@@ -60,11 +60,11 @@ Método: POST      Rota: http://localhost:3000/products/register
 
 Exemplo JSON :
 
-	      {
+	        {
                   "name": "Celular", - String
                   "price": 800.99,   - Number or Float
                   "quantity": 20     - Number (inteiro) 
-               }
+                }
 
 
 Retorno em caso de sucesso : { "mensagem": "Produto salvo com sucesso . " } . 
@@ -110,7 +110,7 @@ Exemplo de JSON :
 
 			{
 			  "_id": "5c5691977e94450799793de8",
-			  "name": "Celular da Maça",
+			  "name": "Celular da Maçã",
 			  "price": 800.99,
 			  "quantity": 20,
 			  "__v": 0
